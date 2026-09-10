@@ -17,6 +17,15 @@ documentation OpenAPI, sécurité, audit, conteneurisation, déploiement et pack
 d'installation de l'agent Windows, tests de charge, scénarios PFE et documentation
 technique finale.
 
+## Livrables
+
+- [Rapport illustré - DOCX](docs/Rapport_Stage_Observation_CGI_Mehdi_Lharti_InfraSentinel_Illustre.docx)
+- [Rapport illustré - PDF](output/pdf/Rapport_Stage_Observation_CGI_Mehdi_Lharti_InfraSentinel_Illustre.pdf)
+- [Vidéo de test sur Lenovo Legion](output/video/Video_Test_InfraSentinel_AI_Lenovo_Legion.mp4)
+
+La vidéo présente uniquement des données synthétiques PFE25 et reprend les
+résultats de la campagne locale du 10 septembre 2026.
+
 ## Démarrage local
 
 ### Nouveau laptop Windows (Docker recommandé)
@@ -50,5 +59,5 @@ Commencer par `docs/LOCAL_FINAL_VALIDATION_REPORT.md` pour l'état strict du
 laboratoire, puis par `docs/README.md` pour l'index, les commandes et le
 troubleshooting. Les rapports `docs/RECONSTRUCTION_AUDIT.md` et
 `docs/TEST_RECOVERY_REPORT.md` restent des preuves historiques; les résultats
-courants sont 191 tests Django découverts sur PostgreSQL : 188 réussis, 3 ignorés
-et aucun échec.
+courants sont 203 tests Django sur PostgreSQL (6 ignorés, aucun échec), 64 tests
+Vitest sur 64 réussis et 26 tests de l'agent Windows sur 26 réussis.

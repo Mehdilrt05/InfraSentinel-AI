@@ -1,6 +1,6 @@
 # Documentation technique InfraSentinel AI
 
-Ce répertoire décrit l'état réellement vérifié de la plateforme au 27 août 2026.
+Ce répertoire décrit l'état réellement vérifié de la plateforme au 10 septembre 2026.
 La documentation distingue le code testé, les intégrations testées avec mocks et
 les validations qui nécessitent encore une infrastructure externe.
 
@@ -8,6 +8,7 @@ les validations qui nécessitent encore une infrastructure externe.
 
 | Besoin | Document |
 |---|---|
+| Consulter les livrables | [rapport Word](Rapport_Stage_Observation_CGI_Mehdi_Lharti_InfraSentinel_Illustre.docx), [rapport PDF](../output/pdf/Rapport_Stage_Observation_CGI_Mehdi_Lharti_InfraSentinel_Illustre.pdf), [vidéo de test](../output/video/Video_Test_InfraSentinel_AI_Lenovo_Legion.mp4) |
 | Vérifier la release de soutenance | [validation locale finale](LOCAL_FINAL_VALIDATION_REPORT.md), [validation historique](FINAL_VALIDATION_REPORT.md), [release finale](FINAL_RELEASE.md) |
 | Comprendre le système | [Architecture](ARCHITECTURE.md), [base de données](DATABASE.md), [métriques](METRICS.md) |
 | Installer sur un laptop | [installation Windows/Docker](LAPTOP_SETUP.md) |
@@ -31,9 +32,16 @@ de validation courants dans ce document et dans `DATABASE.md` les remplacent.
 - Frontend : React 19.1.1, Vite 6.4.3, Axios et Recharts.
 - ML : scikit-learn 1.9, pandas 3.0.3, Isolation Forest versionné par tenant.
 - Agent : Python, psutil, requests, pywin32, service Windows et installateur Inno Setup.
-- Suite Django complète sur PostgreSQL et Redis réel : **191 découverts,
-  188 réussis, 3 ignorés, 0 échec**, le 27 août 2026.
+- Suite Django complète sur PostgreSQL et Redis réel : **203 tests,
+  6 ignorés, 0 échec**, le 10 septembre 2026.
+- Frontend : **17 fichiers Vitest, 64 tests réussis sur 64**, avec TypeScript,
+  ESLint, Prettier et le build Vite réussis.
+- Agent Windows : **26 tests réussis sur 26**.
 - Schéma OpenAPI : génération et validation `drf-spectacular` réussies.
+
+La campagne Django du 10 septembre a injecté `API_DOCS_PUBLIC=1` uniquement
+dans le conteneur de test afin d'exercer le contrat OpenAPI public attendu par
+la suite. Ce réglage ne modifie pas la politique de l'instance locale courante.
 
 Cela ne prouve pas une connexion réelle à vCenter, une collecte Hyper-V autorisée,
 un envoi SMTP externe, un déploiement distant ni une capacité de production. Ces
